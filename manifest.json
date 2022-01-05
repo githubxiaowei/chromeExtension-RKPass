@@ -1,0 +1,24 @@
+{
+    "name": "软考答案",
+    "manifest_version":2,
+    "version":"1.0",
+    "description":"软考在线（http://www.rkpass.cn/）试题答案，在选择题页面点击拓展程序即可",
+    "icons": { 
+        "16": "img/icon.png", 
+        "48": "img/icon.png", 
+        "128": "img/icon.png" 
+    },
+    "browser_action":{
+        "default_popup":"popup.html"
+    },
+    "content_scripts": [
+        {
+          "matches": [ "<all_urls>" ],
+          "js": [ "js/jquery.min.js", "js/content-script.js" ]
+        }
+    ],
+    "background" : {
+        "scripts": ["js/jquery.min.js", "js/background.js"],
+        "persistent": false
+    }
+}
